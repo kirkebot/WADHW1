@@ -21,11 +21,16 @@ fill in both fields (e.g., Email and Username). [0.5 point]      **olemas**
 While styling your pages, using the following rules is required ( -0.5 point for each
 missing rule). [3.5 points]
 
- Use at least 2 different class selectors    **olemas**
+ Use at least 2 different class selectors    
 
- Use an ID selector
+**olemas**
 
- Use a pseudo-element OR pseudo-class      **olemas**
+ Use an ID selector             
+
+**vist on olemas**
+
+ Use a pseudo-element OR pseudo-class      
+**olemas**
 
  Use a Descendant Selector (e.g., div p)
 
@@ -34,3 +39,8 @@ missing rule). [3.5 points]
  Use an Adjacent Sibling Selector (e.g., div + p)
 
  Use a General Sibling Selector (e.g., div ~ p) 
+
+
+. Use flexbox to arrange the layout of your pages to fit both a screen and a cellphone. [2
+point] Note: use the toggle device toolbar to see how the pages look on a screen and on
+a cellphone.
