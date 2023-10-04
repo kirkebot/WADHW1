@@ -50,3 +50,79 @@
 
 /* Style for the logo image */
 
+
+/* Apply some basic styles to the body */
+body.login-box{
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Style the login box */
+.login-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.login-box h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Style the input containers */
+.input-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-container input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.input-container label {
+    position: absolute;
+    left: 10px;
+    top: 12px;
+    color: #999;
+    font-size: 16px;
+    pointer-events: none;
+    transition: top 0.3s ease, left 0.3s ease, font-size 0.3s ease;
+}
+
+/* Move label up and reduce font size when input is focused */
+.input-container input:focus + label,
+.input-container input:valid + label {
+    top: -10px;
+    left: 5px;
+    font-size: 12px;
+    color: #333;
+}
+
+/* Style the login button */
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+p.bluet {
+    color: blue;
+}
