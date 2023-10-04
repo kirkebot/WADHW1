@@ -20,10 +20,17 @@ fill in both fields (e.g., Email and Username). [0.5 point] **olemas**
 
 While styling your pages, using the following rules is required ( -0.5 point for each
 missing rule). [3.5 points]
+
  Use at least 2 different class selectors **olemas**
+
  Use an ID selector
+
  Use a pseudo-element OR pseudo-class
+
  Use a Descendant Selector (e.g., div p)
+
  Use a Child Selector (e.g., div > p)
+
  Use an Adjacent Sibling Selector (e.g., div + p)
+
  Use a General Sibling Selector (e.g., div ~ p) 
