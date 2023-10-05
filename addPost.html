@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="res/css/style.css">
     <title>My Website</title>
     <link rel="stylesheet" href="res/css/style.css">
 </head>
@@ -13,9 +14,25 @@
     
 </div>
 
-<!-- Content of your website goes here -->
-<h1>header</h1>
-<p>loremipsum postitused mnja.</p>
 
+<!-- Content of your website goes here -->
+
+
+
+<div class = "centerBox">
+    <!-- The textarea and text "Post body" -->
+    <form class="postBody">
+        <label for="title" class="text">Post <br>body </label>
+        <textarea rows="5" id="title" class="textField" placeholder="textarea"></textarea>
+    </form>
+    <!-- choose file button and text -->
+    <form class="postBody">
+        <label class="text">Select <br>file </label>
+        <button  class="fileButton" > Choose File</button>
+    </form>
+    <!-- button for creating post -->
+    <button onclick="goToHome()" class="createPost"> Create post</button>
+</div>
+<script type="text/javascript" src="src/js/script.js"></script>
 </body>
 </html>
