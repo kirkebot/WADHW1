@@ -1,3 +1,4 @@
+/* the main gray box*/
 .centerBox {
     position: absolute;
     top: 50%;
@@ -6,29 +7,48 @@
     padding: 10px;
     background-color:  #333;
     width: 9cm;
-    height: 50%;
+    height: 8.5cm;
     border-radius: 25px;
     
   }
-  
+/* create post button*/
 .createPost{
     padding: 4px;
     margin: auto;
-    margin-top:45%;
+    margin-top:2cm;
     display: flex;
-    width: 2.5cm;
     background-color: rgb(39, 132, 218);
     color: white;
-    text-align: center;
+
+}
+/* textarea*/
+.textField{
+    resize: none;
+    margin-left: 10px;
+    width: 5cm;
 }
 
-.textField{
-    width: 50%;
-    height: 100px;
-    box-sizing: border-box;
-    margin-top: 5%;
-    margin-left: 50%;
-    resize: none;
-    vertical-align: top;
-    line-height: 1;
+.text{
+    color: grey;
+    padding: 5px 2px;
+    align-items: flex-start;
+    text-align: right;
+
+}
+/* textarea/button with text */
+.postBody{
+    display: flex;
+    margin-left: 25%;
+    margin-top: 10%;
+}
+
+.fileButton{
+    color: white;
+    background-color: black;
+    width: 4cm;
+    padding: 4px;
+    margin: auto;
+    margin-left: 8px;
+    text-align: center;
+    
 }
