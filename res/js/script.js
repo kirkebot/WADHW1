@@ -1,4 +1,8 @@
-document.addEventListener("DOMContentLoaded", function () {
+function goToHome() {
+    location.href="index.html";
+ }
+
+ document.addEventListener("DOMContentLoaded", function () {
     var loginButton = document.getElementById("login-button");
     var errorMessage = document.getElementById("error-message");
 
