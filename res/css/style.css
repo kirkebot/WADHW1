@@ -146,7 +146,7 @@ p.bluet {
     
   }
 /* create post button*/
-.createPost{
+form + button{
     padding: 4px;
     margin: auto;
     margin-top:2cm;
@@ -156,13 +156,13 @@ p.bluet {
 
 }
 /* textarea*/
-.textField{
+form > textarea{
     resize: none;
     margin-left: 10px;
     width: 5cm;
 }
 
-.text{
+form label{
     color: grey;
     padding: 5px 2px;
     align-items: flex-start;
@@ -170,7 +170,7 @@ p.bluet {
 
 }
 /* textarea/button with text */
-.postBody{
+form {
     display: flex;
     margin-left: 25%;
     margin-top: 10%;
@@ -186,7 +186,7 @@ p.bluet {
     text-align: center;
 }
 
-p {
+head ~ p {
     font-size: 18px;
     font-weight: 500;
 }
@@ -298,3 +298,4 @@ aside {
     .content {
         padding: 0px;
     }
+}
