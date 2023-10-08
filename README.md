@@ -39,9 +39,10 @@ missing rule). [3.5 points]
 **olemas**
 
  Use an Adjacent Sibling Selector (e.g., div + p)
+**olemas**
 
  Use a General Sibling Selector (e.g., div ~ p) 
-
+**olemas**
 
 . Use flexbox to arrange the layout of your pages to fit both a screen and a cellphone. [2
 point] Note: use the toggle device toolbar to see how the pages look on a screen and on
