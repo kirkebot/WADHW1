@@ -33,9 +33,10 @@ missing rule). [3.5 points]
 **olemas**
 
  Use a Descendant Selector (e.g., div p)
-**peaks olema**
+**olemas**
 
  Use a Child Selector (e.g., div > p)
+**olemas**
 
  Use an Adjacent Sibling Selector (e.g., div + p)
 
