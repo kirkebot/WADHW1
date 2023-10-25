@@ -35,8 +35,8 @@
 
 /* Style for the logo image */
 .logo img {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%; /* Make it a circle */
     cursor: pointer; /* Change cursor to a pointer on hover */
 }
@@ -46,7 +46,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    margin: 14px 16px;
+    margin: 16x 16px;
 }
 
 /* Style for the logo image */
@@ -56,19 +56,32 @@
 body.login-box{
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
-    display: flex;
     justify-content: center;
     align-items: center;
+    display: flex;
     height: 100vh;
 }
 
 /* Style the login box */
 .login-box {
-    background-color: #fff;
-    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    width: 300px;
+    height: 400px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: #aa9f9f;
+    max-width: 90%;
     text-align: center;
+
+}
+
+@media (min-width: 1000px) {
+    .flex-container {
+        flex-direction: row;
+    }
 }
 
 .login-box h2 {
@@ -146,7 +159,7 @@ p.bluet {
     
   }
 /* create post button*/
-.createPost{
+form + button{
     padding: 4px;
     margin: auto;
     margin-top:2cm;
@@ -156,13 +169,13 @@ p.bluet {
 
 }
 /* textarea*/
-.textField{
+form > textarea{
     resize: none;
     margin-left: 10px;
     width: 5cm;
 }
 
-.text{
+form label{
     color: grey;
     padding: 5px 2px;
     align-items: flex-start;
@@ -170,7 +183,7 @@ p.bluet {
 
 }
 /* textarea/button with text */
-.postBody{
+form {
     display: flex;
     margin-left: 25%;
     margin-top: 10%;
@@ -186,7 +199,7 @@ p.bluet {
     text-align: center;
 }
 
-p {
+head ~ p {
     font-size: 18px;
     font-weight: 500;
 }
@@ -298,3 +311,5 @@ aside {
     .content {
         padding: 0px;
     }
+}
+
