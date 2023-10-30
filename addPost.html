@@ -7,32 +7,37 @@
 </head>
 <body>
 
-<!-- Navigation bar container -->
-<div class="navbar">
-    <a href="#home"><a href="index.html">Home</a></a>
-    <a class="logo" href="login.html"> <img src="res/images/me.png" width="50" height="50" alt="My picture"></a>
-    
-</div>
+    <!-- Navigation bar container -->
+    <div class="navbar">
+        <a href="#home"><a href="index.html">Home</a></a>
+        <a class="logo"> <img src="res/images/me.png" width="50" height="50" alt="My picture"  id="profilePic"></a> <!-- Removed this for HW2 href="login.html"-->
+    </div>
+
+    <!-- Dropdown menu-->
+    <div class="dropdown" id="dropdownContent">
+        <p>John Doe</p>
+        <p>john.doe@ut.ee</p>
+        <a href="login.html">Logout</a>
+    </div>
+
+    <!-- Content of your website goes here -->
 
 
-<!-- Content of your website goes here -->
 
-
-
-<div class = "centerBox">
-    <!-- The textarea and text "Post body" -->
-    <form>
-        <label for="title">Post <br>body </label>
-        <textarea rows="5" id="title" placeholder="textarea"></textarea>
-    </form>
-    <!-- choose file button and text -->
-    <form>
-        <label>Select <br>file </label>
-        <button  class="fileButton" > Choose File</button>
-    </form>
-    <!-- button for creating post -->
-    <button onclick="goToHome()"> Create post</button>
-</div>
-<script type="text/javascript" src="res/js/script.js"></script>
+    <div class = "centerBox">
+        <!-- The textarea and text "Post body" -->
+        <form>
+            <label for="title">Post <br>body </label>
+            <textarea rows="5" id="title" placeholder="textarea"></textarea>
+        </form>
+        <!-- choose file button and text -->
+        <form>
+            <label>Select <br>file </label>
+            <button  class="fileButton" > Choose File</button>
+        </form>
+        <!-- button for creating post -->
+        <button onclick="goToHome()"> Create post</button>
+    </div>
+    <script type="text/javascript" src="res/js/script.js"></script>
 </body>
 </html>

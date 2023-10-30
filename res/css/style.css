@@ -313,3 +313,29 @@ aside {
     }
 }
 
+/* Dropdown menu */
+
+.dropdown {
+    display: block;
+    background-color: #333;
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    top: 55px;
+    right: 0.5%; 
+    width: 185px; 
+    height: 120px; 
+    border-radius: 5%; 
+    line-height: 20px; 
+    color: white; 
+    
+    
+}
+.dropdown a {
+    color: #ccc;
+}
+
+
+.dropdown{
+    display: none;
+}

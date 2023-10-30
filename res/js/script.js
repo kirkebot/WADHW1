@@ -71,3 +71,13 @@ window.onload = function () {
       
   
   };
+  // dropdown  menu
+
+  document.getElementById("profilePic").addEventListener("click", function(){
+    var dc = document.getElementById("dropdownContent");
+    if (dc.style.display === "block") {
+        dc.style.display = "none";
+    } else {
+        dc.style.display = "block";
+    }
+  })
