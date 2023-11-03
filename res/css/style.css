@@ -339,3 +339,45 @@ aside {
 .dropdown{
     display: none;
 }
+/* style.css */
+.footer {
+    background-color: #f0f0f0; /* Gray background color */
+    text-align: center; /* Center-align text */
+    padding: 10px; /* Add some padding for spacing */
+    border-radius: 10px; /* Add rounded corners */
+    width: 100%; /* Make it stretch from edge to edge */
+    position: absolute; /* Position at the bottom of the page */ 
+    bottom: 0;
+  }
+  
+  .left-sidebar {
+    background-color: #807979ad; /* Gray background color */
+    border-radius: 10px; /* Add rounded corners */
+    width: 20%; /* Adjust the width as needed */
+    position: absolute; /* Position on the sides of the page */
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+  .right-sidebar{
+    background-color: #807979ad; /* Gray background color */
+    border-radius: 10px; /* Add rounded corners */
+    width: 20%; /* Adjust the width as needed */
+    position: absolute; /* Position on the sides of the page */
+    top: 0;
+    bottom: 0;
+    right: 0; /* Position it to the right */
+    z-index: 1; /* Ensure it's in front of the content */
+  }
+  
+  .main {
+    margin-left: 20%; /* Adjust the margin to account for the left sidebar */
+    margin-right: 20%; /* Adjust the margin to account for the right sidebar */
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+  }
