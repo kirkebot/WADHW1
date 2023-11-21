@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "start": "start /B npm run server && npm run serve",
     "serve": "vue-cli-service serve",
+    "server": "json-server --watch Data/posts.json",
     "build": "vue-cli-service build"
   },
   "dependencies": {
