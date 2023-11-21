@@ -5,6 +5,8 @@ export default createStore({
   state: {
     postsList: [],
     isDropdownOpen: false,
+    email: '',
+    password: '',
   },
   mutations: {
     setPostsList(state, posts) {
@@ -12,7 +14,7 @@ export default createStore({
     },
     toggleDropdown(state){
       state.isDropdownOpen = !state.isDropdownOpen;
-    }
+    },
   },
   actions: {
     async fetchPostsList({ commit }) {
@@ -24,7 +26,7 @@ export default createStore({
 
     toggleDropdown: act => {
       act.commit("toggleDropdown")
-    }
+    },
   },
 
   getters: {
@@ -34,3 +36,4 @@ export default createStore({
   modules: {
   }
 })
+
