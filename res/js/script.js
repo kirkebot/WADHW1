@@ -23,8 +23,8 @@ function goToHome() {
 
 // ------  json file reader  ------
 window.onload = function () {
-    //fetch("./res/json/posts.json")
-    fetch("https://api.npoint.io/4ca41270ded4dfc0e351")
+    fetch("./res/json/posts.json")
+    //fetch("https://api.npoint.io/4ca41270ded4dfc0e351")
       .then((response) => response.json())
       .then((json) => {
         

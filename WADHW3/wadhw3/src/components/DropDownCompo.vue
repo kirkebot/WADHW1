@@ -2,7 +2,7 @@
     <div class="dropdown">
       <p>John Doe</p>
       <p>john.doe@ut.ee</p>
-      <router-link to="/login" class="nav-link" @click="toggleDropDown">Login</router-link>
+      <router-link to="/login" class="nav-link" @click="toggleDropDown">Signup</router-link>
     </div>
 </template>
 

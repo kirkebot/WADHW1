@@ -1,7 +1,8 @@
 <template>
   <nav>
     <router-link to="/" class="nav-link">Main</router-link>
-    <router-link to="/login" class="nav-link">Login</router-link>
+    <!--login is the same as signup in this code -->
+    <router-link to="/login" class="nav-link">Signup</router-link>
     
     <a class="logo" > 
       <img src="./assets/me.png" width="50" height="50" alt="My picture" id="profilePic" @click="toggleDropDown" />
@@ -9,6 +10,9 @@
   </nav>
   <drop-down-compo v-show="isDropdownOpen"></drop-down-compo>
   <router-view/>
+  <footer>
+        <p>2023 PostIt. All rights reserved.</p>
+    </footer>
 </template>
 
 <script>
@@ -33,12 +37,20 @@ export default {
 
 
 <style>
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #ffffff;
+  flex: 1;
+  position: relative;
 }
 
 nav {
@@ -63,7 +75,6 @@ nav .nav-link:hover {
 }
 
 .logo {
-    float: right;
     margin-right: 20px; /* Add margin for spacing from the right edge */
 }
 
@@ -73,7 +84,9 @@ nav .nav-link:hover {
     height: 30px;
     border-radius: 50%; /* Make it a circle */
     cursor: pointer; /* Change cursor to a pointer on hover */
-}
+    margin-top: 16px; /* Adjust the margin-top */
+    margin-right: 16px; /* Adjust the margin-right */
+  }
 
 /* Style for the logo in the far right corner */
 .logo {
@@ -82,6 +95,12 @@ nav .nav-link:hover {
     right: 0;
     margin: 16x 16px;
 }
-
+/* Style for the footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1%;
+    
+}
 
 </style>
