@@ -1,9 +1,8 @@
 <template>
     <div class="signup">
         <h3>Welcome to PostIt</h3>
-        <p class = "bluet">Create an account</p>
-        <p>or</p>
-        <p>Please log in</p>
+    
+        <p>Please signup</p>
         <div class="input-container">
             <input v-model.trim.lazy="email" type="text" required placeholder="Email" id="email">  
         </div>
@@ -11,9 +10,9 @@
             <input v-model.trim.lazy="password" type="password" required placeholder="Password" id="password">
         </div>    
 
-        <button id="login-button" @click="handleLogin">Login</button>
-        <p id="error-message" style="color: red;"> {{ errorMessage }} </p>
-        <p class="bluet">>Forgot password</p>
+        <button id="login-button" @click="handleLogin">Signup</button>
+        <div class="error-message" id="error-message" style="color: red;"> {{ errorMessage }} </div>
+    
     </div>
 </template>
 
@@ -34,16 +33,56 @@
    
    methods: {
     handleLogin() {
-        if (this.email === "" || this.password === "") {
-            this.errorMessage = "Insert both Email and password";
-        } else {
-            this.errorMessage = ""; // Clear any previous error message
-            // Redirect to index.html (you may need to adjust the path)
-            this.$router.push('/');
-        }
-        }
+        let errors = [];
+        let indexOfError = 1;
+    if (this.email === "" || this.password === "") {
+        errors.push(indexOfError +". Insert both Email and password.");
+        indexOfError = indexOfError + 1
     }
-   }
+
+    // Check all the password conditions
+    if (this.password.length < 8 || this.password.length > 15) {
+        errors.push(indexOfError +". Password should be at least 8 characters and less than 15 characters.");
+        indexOfError = indexOfError + 1
+    }
+
+    if (this.password.toLowerCase() === this.password) {
+        errors.push(indexOfError +". Password should include at least one uppercase character.");
+        indexOfError = indexOfError + 1
+    }
+    if ((this.password.match(/[a-z]/g) || []).length < 2) {
+      errors.push(indexOfError + ". Password should include at least two lowercase characters.");
+      indexOfError = indexOfError + 1;
+    }
+
+    
+    if (!/\d/.test(this.password)) {
+      errors.push(indexOfError + ". Password should include at least one numeric value.");
+      indexOfError = indexOfError + 1;
+    }
+
+    if (!/_/.test(this.password)) {
+      errors.push(indexOfError + ". Password should include the character '_'.");
+      indexOfError = indexOfError + 1;
+    }
+
+    if (errors.length > 0) {
+        errors.unshift("We found the following problems with your signup:");
+        // Combine error messages into a single string
+        this.errorMessage = errors.join("\n");
+        
+    }
+    
+     else {
+        this.errorMessage = ""; // Clear any previous error message
+        // Redirect to index.html (you may need to adjust the path)
+        this.$router.push('/');
+    }
+        
+    }
+    }
+}
+
 
    </script>
 
@@ -59,7 +98,7 @@
   .signup {
     position: relative;
     width: 80vh; 
-    height: 400px;
+    height: 420px;
     border-radius: 30px;
     background-color: rgba(160, 150, 150);
     display: flex;
@@ -137,6 +176,9 @@ button:hover {
 p.bluet {
 
     color: blue;
+}
+.error-message {
+  white-space: pre-line; /* Ensures that line breaks are respected */
 }
  
 </style>
