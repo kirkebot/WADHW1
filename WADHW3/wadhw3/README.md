@@ -51,5 +51,5 @@ conditions:
 • It should include the character “_”
 When the password does not satisfy any of the previous conditions, a text should appear
 within the form stating that the password is not valid, followed by the conditions to be
-followed when specifying the password. (3 points)
+followed when specifying the password. (3 points) **OK**
 7. The styling of your overall App (1 point).
