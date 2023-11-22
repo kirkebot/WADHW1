@@ -91,8 +91,11 @@ body.login-box{
 
 /* Style the input containers */
 .input-container {
+    top: 50%;
+    left: 50%;
     position: relative;
     margin-bottom: 20px;
+    transform: translate(-50%, -50%);
 }
 
 .input-container input {

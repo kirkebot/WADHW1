@@ -1,17 +1,14 @@
 <template>
-  
-    <div class="login-box">
+    <div class="signup">
         <h3>Welcome to PostIt</h3>
         <p class = "bluet">Create an account</p>
         <p>or</p>
         <p>Please log in</p>
         <div class="input-container">
-            <input v-model.trim.lazy="email" type="text" id="email" required>
-            <label for="email">Email</label>
+            <input v-model.trim.lazy="email" type="text" required placeholder="Email" id="email">  
         </div>
         <div class="input-container">
-            <input v-model.trim.lazy="password" type="password" id="password" required>
-            <label for="password">Password</label>
+            <input v-model.trim.lazy="password" type="password" required placeholder="Password" id="password">
         </div>    
 
         <button id="login-button" @click="handleLogin">Login</button>
@@ -51,20 +48,7 @@
    </script>
 
    <style>
-.login-box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 10px;
-    width: 300px;
-    height: 400px;
-    border-radius: 10px;
-    background-color: #aa9f9f;
-    max-width: 90%;
-    text-align: center;
 
-}
 
 @media (min-width: 1000px) {
     .flex-container {
@@ -72,19 +56,44 @@
     }
 }
 
-.login-box h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-/* Style the input containers */
-.input-container {
+  .signup {
     position: relative;
+    width: 80vh; 
+    height: 400px;
+    border-radius: 30px;
+    background-color: rgba(160, 150, 150);
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0 auto;
+    margin-bottom: 5%;
+    margin-top: 5%;
+  }
+  .signup h3{
+    position:absolute;
+    top: 20px;
+  }
+  
+  /* Style the input containers */
+  .input-container {
+    display: flex;
+    justify-content: center; /* Align items with space between them */
+    width: 50%; /* Each input container takes half the width */
     margin-bottom: 20px;
-}
 
-.input-container input {
-    width: 100%;
+  }
+  
+  .input-container label {
+    color: #999;
+    font-size: 150%;
+    margin-right: 10px;
+  }
+  
+  .input-container input {
+    width: 100%; /* Adjust as needed */
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -126,7 +135,9 @@ button:hover {
 }
 
 p.bluet {
+
     color: blue;
 }
-
+ 
 </style>
+    

@@ -28,9 +28,7 @@ export default {
 * {
   box-sizing: border-box;
 }
-.main{
 
-}
 .post{
     display: flex;
     flex-flow: column nowrap;
