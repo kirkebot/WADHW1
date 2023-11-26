@@ -13,8 +13,7 @@
     <div class="side-panel right"></div>
     
   </div>
-  <div class="footer">
-        <p>2023 PostIt. All rights reserved.</p>
+  <div class="footerb">
         <button @click="resetLikes">Reset Likes</button>
     </div>
 </template>
@@ -74,14 +73,14 @@ export default {
   align-items: center;
 }
 
-.footer {
+.footerb {
   position: relative;
   color: black;
   margin-top: 5px;
   width: 100%;
-  background: #ddd;
-  min-height: 100px;
-  padding: 20px 50px;
+  background: white;
+
+  
   border-radius: 10px;
   display: flex;
   justify-content: center;

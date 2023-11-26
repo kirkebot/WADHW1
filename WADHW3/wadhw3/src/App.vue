@@ -10,9 +10,9 @@
   </nav>
   <drop-down-compo v-show="isDropdownOpen"></drop-down-compo>
   <router-view/>
-  <footer>
+  <div class="footer">
         <p>2023 PostIt. All rights reserved.</p>
-    </footer>
+    </div>
 </template>
 
 <script>
@@ -108,17 +108,21 @@ nav .nav-link:hover {
     right: 0;
     margin: 16x 16px;
 }
-/* Style for the footer */
 .footer {
   position: relative;
+  color: black;
+  margin-top: 5px;
   width: 100%;
-  background: #3586ff;
+  background: #ddd;
   min-height: 100px;
   padding: 20px 50px;
+  border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  
 }
+
 
 </style>
