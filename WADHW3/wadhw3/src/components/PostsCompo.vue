@@ -5,7 +5,7 @@
     <div class="content">
       <div v-for="post in postsList" :key="post.id" class="post">
         <div class="postHeader">
-          <img src="res/images/me.png" alt="Creator Image" />
+          <img src="@/assets/login.png" alt="Creator Image" />
           <p id="postDate">{{ post.date }}</p>
         </div>
         <div class="postContent">
@@ -91,6 +91,5 @@ export default {
 .postActions button {
   margin-right: 10px;
   cursor: pointer;
-  
 }
 </style>
