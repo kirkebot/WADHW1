@@ -43,7 +43,7 @@ body {
     flex-direction: column;
     margin: 0;
 }
-#app {
+/*#app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -51,7 +51,20 @@ body {
   color: #ffffff;
   flex: 1;
   position: relative;
+}*/
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
+
 
 nav {
     overflow: hidden;
@@ -96,11 +109,16 @@ nav .nav-link:hover {
     margin: 16x 16px;
 }
 /* Style for the footer */
-footer {
-  background-color: #333;
-  color: #fff;
-  padding: 1%;
-    
+.footer {
+  position: relative;
+  width: 100%;
+  background: #3586ff;
+  min-height: 100px;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 </style>

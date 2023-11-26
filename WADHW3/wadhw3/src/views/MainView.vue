@@ -1,33 +1,101 @@
 <template>
-    <div class="header">
-       
-    </div>
-    <div class="posts"> 
+  <div class="main-view">
+    <div class="side-panel left"></div>
+
+    <div class="center-content">
+      <div class="header"></div>
+      <div class="posts">
         <posts-compo></posts-compo>
-
+      </div>
+      
     </div>
-    <div class="footer">
 
+    <div class="side-panel right"></div>
+    
+  </div>
+  <div class="footer">
+        <p>2023 PostIt. All rights reserved.</p>
+        <button @click="resetLikes">Reset Likes</button>
     </div>
-   </template>
-   
-   <script>
-   import PostsCompo from "@/components/PostsCompo.vue";
-   export default {
-   name: "MainView",
-   
-   components: { PostsCompo },
-   data: function() {
-   return {
-   }},
-   
+</template>
+
+<script>
+import PostsCompo from "@/components/PostsCompo.vue";
+export default {
+  name: "MainView",
+  components: { PostsCompo },
    methods: {
-   
-   }
-   }
-   
-   </script>
+    resetLikes() {
+      // Dispatch an action to reset the likes for all posts
+      this.$store.dispatch('resetLikes');
+    },
+  },
+  data() {
+    return {};
+  },
+};
+</script>
 
-   <style>
+<style>
+* {
+  box-sizing: border-box;
+  margin-top: 3px;
+  padding: 0;
+}
 
+.main-view {
+  display: flex;
+  height: 100%;
+}
+
+.side-panel {
+  flex: 1;
+  margin-top: 5px;
+  border-radius: 10px;
+  background-color: #ddd;
+  /*height: 100%; */
+}
+
+.side-panel.left {
+  /* Additional styles for left panel if needed */
+}
+
+.side-panel.right {
+  /* Additional styles for right panel if needed */
+}
+
+.p{
+
+}
+.center-content {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer {
+  position: relative;
+  color: black;
+  margin-top: 5px;
+  width: 100%;
+  background: #ddd;
+  min-height: 100px;
+  padding: 20px 50px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+}
+.footer button{
+    margin-top: 10px;
+    cursor: pointer;
+}
+.posts {
+  width: 95%; /* Adjust width as needed */
+
+  max-width: 800px; /* Set a maximum width if desired */
+}
 </style>

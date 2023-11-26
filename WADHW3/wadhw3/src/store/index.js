@@ -1,4 +1,4 @@
-import { createStore } from 'vuex'
+import { createStore } from 'vuex';
 
 export default createStore({
   strict: true,
@@ -12,28 +12,43 @@ export default createStore({
     setPostsList(state, posts) {
       state.postsList = posts;
     },
-    toggleDropdown(state){
+    toggleDropdown(state) {
       state.isDropdownOpen = !state.isDropdownOpen;
+    },
+    likePost(state, postId) {
+      const post = state.postsList.find((p) => p.id === postId);
+      if (post) {
+        post.likes += 1;
+      }
+    },
+    resetLikes(state) {
+      state.postsList.forEach((post) => {
+        post.likes = 0;
+      });
     },
   },
   actions: {
     async fetchPostsList({ commit }) {
-        await fetch('http://localhost:3000/Posts')
-        .then(response => response.json())
-        .then(data => commit('setPostsList', data))
-        .catch(err => console.error(err.message))
+      try {
+        const response = await fetch('http://localhost:3000/Posts');
+        const data = await response.json();
+        commit('setPostsList', data);
+      } catch (error) {
+        console.error(error.message);
+      }
     },
-
-    toggleDropdown: act => {
-      act.commit("toggleDropdown")
+    toggleDropdown({ commit }) {
+      commit('toggleDropdown');
+    },
+    likePost({ commit }, postId) {
+      commit('likePost', postId);
+    },
+    resetLikes({ commit }) {
+      commit('resetLikes');
     },
   },
-
   getters: {
     getPostsList: (state) => state.postsList,
   },
-
-  modules: {
-  }
-})
-
+  modules: {},
+});

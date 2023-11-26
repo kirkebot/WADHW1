@@ -24,10 +24,8 @@ function goToHome() {
 // ------  json file reader  ------
 window.onload = function () {
     fetch("./res/json/posts.json")
-    //fetch("https://api.npoint.io/4ca41270ded4dfc0e351")
       .then((response) => response.json())
       .then((json) => {
-        
         var posts = json;   
         for(var i = 0; i < posts.length; i++){
             var post = posts[i];
@@ -47,7 +45,6 @@ window.onload = function () {
             divPostContent.setAttribute("class", "postContent");
             p_postDate.setAttribute("id", "postDate");
 
-            
             p_postDate.textContent = post.date;
             p_post.textContent = post.text;
 
@@ -64,13 +61,15 @@ window.onload = function () {
             divPostContent.appendChild(p_post);
 
             let contentDiv = document.getElementsByClassName("content");
-            console.log(contentDiv);
             contentDiv[0].appendChild(divPost);
         }
       })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
+};
       
   
-  };
   // dropdown  menu
 
   document.getElementById("profilePic").addEventListener("click", function(){
