@@ -9,8 +9,17 @@
 <!-- Navigation bar container -->
 <div class="navbar">
     <a href="#home"><a href="index.html">Home</a></a>
-    <a class="logo" href="login.html"> <img src="res/images/me.png" width="50" height="50" alt="My picture"></a>
-    
+    <a class="logo" ><!-- Removed this for HW2 href="login.html"-->
+         <img src="res/images/me.png" width="50" height="50" alt="My picture"  id="profilePic">
+    </a> 
+
+</div>
+
+<!-- Dropdown menu-->
+<div class="dropdown" id="dropdownContent">
+    <p>John Doe</p>
+    <p>john.doe@ut.ee</p>
+    <a href="login.html">Logout</a>
 </div>
 
 <div class="login-box">
@@ -30,9 +39,8 @@
         <!--<button onclick="location.href='index.html'">Login</button> -->
         <button id="login-button">Login</button>
         <p id="error-message" style="color: red;"></p>
-        <p class="bluet">Forgot password</p>
+        <p class="bluet"></p>Forgot password</p>
     </div>
     <script src="res/js/script.js"></script>
-
 </body>
 </html>
