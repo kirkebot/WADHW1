@@ -20,6 +20,11 @@ export default createStore({
       if (post) {
         post.likes += 1;
       }
+      fetch(`http://localhost:3000/Posts/${postId}`, {
+        method: 'PATCH', // or 'PUT'
+        headers: { 'Content-Type': 'application/json'},
+        body: JSON.stringify({ likes: post.likes }),
+      })
     },
     resetLikes(state) {
       state.postsList.forEach((post) => {
