@@ -5,6 +5,7 @@
     <input type="email" name="email"  required v-model="email">
     <label for="password">Password</label>
     <input type="password" name="password" required v-model="password">
+    <p class="error-message" v-if="errorMessage">{{ errorMessage }}</p>
     <button @click="SignUp" class="SignUp">SignUp</button>
   </div>
 </template>
@@ -17,12 +18,19 @@ data: function() {
     return {
    email: '',
    password: '',
+   errorMessage: '',
   }
   },
   methods: {
 
 
 SignUp() {
+  
+      if (!this.email || !this.password) {
+        this.errorMessage = "Please enter both email and password";
+        return;
+      }
+    
       var data = {
         email: this.email,
         password: this.password
@@ -52,6 +60,10 @@ SignUp() {
 </script>
 
 <style scoped>
+.error-message {
+  color: red;
+  margin-top: 5px;
+}
 .form {
   max-width: 420px;
   margin: 30px auto;
