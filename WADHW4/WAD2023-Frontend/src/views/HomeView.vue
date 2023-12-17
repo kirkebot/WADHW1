@@ -13,7 +13,6 @@
             <p id="postDate">{{getCurrentDate()}}</p>
           </div>
            
-            <h3>{{post.title}} </h3>
           
           <p>{{post.body}} </p>
         </div>
@@ -130,6 +129,7 @@ body{
   margin-bottom: 5px;
   padding: 3px 5px;
   border-radius: 10px;
+  width: 100%;
 }
 h3{
   font-family: 'Quicksand', sans-serif;
@@ -137,9 +137,7 @@ h3{
   background: rgb(172, 207, 187);
   border-radius: 10px;
 }
-p{
-  background: #796dbd;
-}
+
 h1, h2, h3, h4, ul, li, a, input, label, button, div, footer{
   margin: 0;
   padding: 10px;
@@ -173,6 +171,7 @@ button{
   display: block;
   padding: 10px 16px;
   letter-spacing: 2px;
+  min-width: 130px;
 }
 .post {
     
@@ -184,6 +183,8 @@ button{
     text-align: left;
     display: flex;
     flex-direction: column;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 .postHeader {
   justify-content: space-between;
