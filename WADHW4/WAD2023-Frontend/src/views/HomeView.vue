@@ -1,97 +1,88 @@
-<template>
-  <div class= "main-view">
-    <div class="side-panel left"></div>
-    <div class="posts-container">
-      <div class="container">
-        <button v-if = "authResult" @click="Logout" class="center">Logout</button>
-      </div>
-      <div class="post-list" v-for="post in posts"   :key="post.index"> 
-        
-        <div class="post" @click=aPost(post.id)>
-          <div class="postHeader">
-          <!--<img src="@/assets/login.png" alt="Creator Image" />-->
-            <p id="postDate">{{getCurrentDate()}}</p>
-          </div>
-           
-          
-          <p>{{post.body}} </p>
-        </div>
-      
-      </div>
-      <button @click="DeleteAll">Delete All</button>
-      <button @click="AddPost">Add Post</button>
-    </div>
 
-    <div class="side-panel right"></div>
-</div>
+
+<template>
+  
+    <div class="main-content">
+      <div class="side-panel left"></div>
+      <div class="posts-container">
+        <div class="container">
+          <button v-if="authResult" @click="Logout" class="center">Logout</button>
+        </div>
+        <div class="post-list" v-for="post in posts" :key="post.index">
+          <div class="post" @click="aPost(post.id)">
+            <div class="postHeader">
+              <p id="postDate">{{ getCurrentDate() }}</p>
+            </div>
+            <p>{{ post.body }} </p>
+          </div>
+        </div>
+        <div class="button-container">
+          <button @click="DeleteAll" class="delete-button">Delete All</button>
+          <button @click="AddPost" class="add-button">Add Post</button>
+        </div>
+      </div>
+      <div class="side-panel right"></div>
+    </div>
+    <div class="footer"></div>
+  
 </template>
 
 <script>
-// @ is an alias to /src
 import auth from "../auth";
 
 export default {
   name: "HomeView",
-  components: {
-  },
-
-   data: function() {
+  data: function () {
     return {
-      posts:[ ],
+      posts: [],
       authResult: auth.authenticated(),
     };
   },
-  
   methods: {
-    AddPost(){
+    AddPost() {
       this.$router.push("/api/addpost");
     },
 
-    DeleteAll(){
+    DeleteAll() {
       console.log("delete all");
       for (const post of this.posts) {
         console.log(post);
         fetch(`http://localhost:3000/api/posts/${post.id}`, {
-            method: "DELETE",
-            headers: { "Content-Type": "application/json" },
-          })
+          method: "DELETE",
+          headers: { "Content-Type": "application/json" },
+        })
           .then((response) => {
-            console.log(response.data)
+            console.log(response.data);
           })
           .catch((e) => {
             console.log(e);
           });
-        }
-        this.posts = [];
-        
+      }
+      this.posts = [];
     },
 
     Logout() {
       fetch("http://localhost:3000/auth/logout", {
-          credentials: 'include', //  Don't forget to specify this if you need cookies
+        credentials: "include",
       })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        console.log('jwt removed');
-        //console.log('jwt removed:' + auth.authenticated());
-        this.$router.push("/api/login");
-        //location.assign("/");
-      })
-      .catch((e) => {
-        console.log(e);
-        console.log("error logout");
-      });
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          console.log("jwt removed");
+          this.$router.push("/api/login");
+        })
+        .catch((e) => {
+          console.log(e);
+          console.log("error logout");
+        });
     },
 
     getCurrentDate() {
-
       const currentDate = new Date();
       const year = currentDate.getFullYear();
       const month = this.getMonthName(currentDate.getMonth() + 1);
       const day = currentDate.getDate();
       return `${month} ${day}, ${year}`;
-      
     },
 
     getMonthName(monthNumber) {
@@ -102,27 +93,48 @@ export default {
       return months[monthNumber - 1];
     },
 
-    aPost(id){
+    aPost(id) {
       console.log("/api/apost/" + id);
       this.$router.push("/api/apost/" + id);
     },
-    },
-    mounted() {
-      fetch(`http://localhost:3000/api/posts/`)
-        .then((response) => response.json())
-        .then((data) => (this.posts = data))
-        .catch((err) => console.log(err.message));
-    },
+  },
+  mounted() {
+    fetch(`http://localhost:3000/api/posts/`)
+      .then((response) => response.json())
+      .then((data) => (this.posts = data))
+      .catch((err) => console.log(err.message));
+  },
 };
 </script>
 
 <style scoped>
-body{
+body {
   margin: 20px 40px;
   font-size: 1.2rem;
   letter-spacing: 1px;
   background: #fafafa;
   position: relative;
+}
+
+
+.main-view{
+  display: flexbox;
+}
+.main-content {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  height: 100%;
+}
+
+.footer {
+  height: 50px; /* Set a fixed height for the footer */
+  background-color: #ddd; /* Add a background color for visibility */
+  color: #fff;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .post-list{
   background: rgb(223, 233, 228);
@@ -215,21 +227,44 @@ button{
   flex-direction: column;
   align-items: center;
 }
+
 .side-panel {
-  min-width: 15vw;
   flex: 1;
   margin-top: 5px;
   border-radius: 10px;
   background-color: #ddd;
-  height: 100%; 
-}
-.side-panel.left {
-  min-width: 15vw;
-  /* Additional styles for left panel if needed */
+  /*height: 100%; */
 }
 
-.side-panel.right {
-  min-width: 15vw;
-  /* Additional styles for right panel if needed */
+
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+
+}
+
+.delete-button,
+.add-button {
+  border-radius: 50px;
+  background: #fee996;
+  border: 10;
+  font-weight: 700;
+  font-size: 0.8em;
+  padding: 10px 16px;
+  letter-spacing: 2px;
+  min-width: 130px;
+}
+
+.delete-button {
+  background-color: #ff6666; /* Adjust the color as needed */
+}
+
+.add-button {
+  background-color: #66ff66; /* Adjust the color as needed */
 }
 </style>
+
+
+

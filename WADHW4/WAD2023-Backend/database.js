@@ -27,7 +27,7 @@ An example of generated uuid:  32165102-4866-4d2d-b90c-7a2fddbb6bc8
 const createTblQuery1 = `
     CREATE TABLE IF NOT EXISTS "posttable" (
 	    "id" SERIAL PRIMARY KEY,         
-	    "body" VARCHAR(200) NOT NULL,
+	    "body" VARCHAR(1000) NOT NULL,
         "urllink" VARCHAR(200)  
     );`;
 const createTblQuery2 = `
