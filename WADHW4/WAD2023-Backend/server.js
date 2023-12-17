@@ -66,17 +66,19 @@ app.get('/api/posts/:id', async(req, res) => {
     }
 });
 
-app.put('/api/posts', async(req, res) => {
+app.put('/api/posts/:id', async (req, res) => {
     try {
         const { id } = req.params;
         const post = req.body;
-        console.log("update request has arrived");
+        console.log("Update request has arrived");
         const updatepost = await pool.query(
-            "UPDATE posttable SET (title, body, urllink) = ($2, $3, $4) WHERE id = $1 RETURNING*", [id, post.title, post.body, post.urllink]
+            "UPDATE posttable SET body = $2, urllink = $3 WHERE id = $1 RETURNING *",
+            [id, post.body, post.urllink]
         );
-        res.json(updatepost);
+        res.json(updatepost.rows[0]);
     } catch (err) {
         console.error(err.message);
+        res.status(500).json({ error: "Internal Server Error" });
     }
 });
 
